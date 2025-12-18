@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>okw.y 😜</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #e0e0e0;
+            --accent-color: #00ff41;
+            --accent-dim: rgba(0, 255, 65, 0.05);
+            --card-bg: rgba(20, 20, 20, 0.5);
+            --font-stack: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 30%, var(--accent-dim) 0%, var(--bg-color) 70%);
+            color: var(--text-color);
+            font-family: var(--font-stack);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+            z-index: 1;
+            animation: fade-in-up 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .avatar-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #1a1a1a;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .nickname {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05rem;
+            color: #ffffff;
+        }
+
+        .bio {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 2rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background-color: rgba(0, 255, 65, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .link-item svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: fill 0.2s ease;
+        }
+
+        @keyframes fade-in-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-card {
+                padding: 1.5rem;
+            }
+            .nickname {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="profile-card">
+        <div class="avatar-container">
+            <img 
+                src="https://avatars.githubusercontent.com/u/104445371" 
+                alt="Avatar of okw.y" 
+                class="avatar"
+            >
+        </div>
+
+        <h1 class="nickname">okw.y</h1>
+        <p class="bio">занимаюсь х****й</p>
+
+        <nav class="links">
+            <a href="https://t.me/okwy_tavern" target="_blank" class="link-item" aria-label="telegram">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 20.710938 3.65625 C 20.710938 3.65625 22.652344 2.898438 22.492188 4.738281 C 22.4375 5.496094 21.949219 8.144531 21.574219 11.011719 L 20.277344 19.507812 C 20.277344 19.507812 20.171875 20.753906 19.199219 20.96875 C 18.226562 21.183594 16.769531 20.210938 16.5 19.996094 C 16.285156 19.832031 12.453125 17.398438 11.105469 16.207031 C 10.726562 15.882812 10.292969 15.234375 11.160156 14.476562 L 16.824219 9.066406 C 17.472656 8.414062 18.121094 6.902344 15.421875 8.742188 L 7.867188 13.878906 C 7.867188 13.878906 7.003906 14.421875 5.382812 13.933594 L 1.875 12.851562 C 1.875 12.851562 0.582031 12.042969 2.792969 11.230469 C 8.191406 8.6875 14.828125 6.089844 20.710938 3.65625 Z M 20.710938 3.65625 "/>
+                </svg>
+                <span>telegram</span>
+            </a>
+
+            <a href="https://github.com/okw-y" target="_blank" class="link-item" aria-label="gitHub">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                <span>gitHub</span>
+            </a>
+        </nav>
+    </main>
+
+</body>
+</html>
